@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.bp.java8changes.method_refrence.Fi;
+import com.bp.java8changes.method_refrence.SeyHello;
+
 public class MainActivity extends AppCompatActivity implements InterfaceWithDefaultMethod {
     private static final String TAG_KEY = "behrooz_log";
 
@@ -46,6 +49,16 @@ public class MainActivity extends AppCompatActivity implements InterfaceWithDefa
         //or
         MyFunctionalInterface2 mfi5 = (s) -> Log.d(TAG_KEY,s);
         mfi5.Method("hey I am from mfi5 with a String Argument");
+
+
+
+
+        // method reference ----------------------------
+
+        SeyHello seyHello= new SeyHello();
+        Fi fi= seyHello::SeyHi;
+
+        Log.d(TAG_KEY, fi.a());
 
     }
 
