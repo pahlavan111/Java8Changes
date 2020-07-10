@@ -43,22 +43,22 @@ public class MainActivity extends AppCompatActivity implements InterfaceWithDefa
 //---------------------------------------------------------------------------------------------------------
 
 
-        MyFunctionalInterface2 mfi4 = str -> Log.d(TAG_KEY,str);
+        MyFunctionalInterface2 mfi4 = str -> Log.d(TAG_KEY, str);
         mfi4.Method("hey I am from mfi4 with a String Argument");
 
         //or
-        MyFunctionalInterface2 mfi5 = (s) -> Log.d(TAG_KEY,s);
+        MyFunctionalInterface2 mfi5 = (s) -> Log.d(TAG_KEY, s);
         mfi5.Method("hey I am from mfi5 with a String Argument");
 
 
+        //      ---------------  method reference ----------------
 
+        SeyHello seyHello = new SeyHello();
+        Fi fi = seyHello::SeyHi;
 
-        // method reference ----------------------------
+        String result = fi.a();
+        Log.d(TAG_KEY,result);
 
-        SeyHello seyHello= new SeyHello();
-        Fi fi= seyHello::SeyHi;
-
-        Log.d(TAG_KEY, fi.a());
 
     }
 
